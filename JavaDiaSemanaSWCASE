@@ -1,0 +1,48 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("DIGITE UM NUMERO CORRESPONDENTE DO DIA DA SEMANA 1 A 7");
+		int numero = sc.nextInt();
+		String dia = null ;
+		
+		switch (numero) {
+		case 1:
+			dia = "DOMINGO";
+			break ;
+		case 2:
+			dia = "SEGUNDA";
+			break;
+		case 3:
+			dia = "TERCA";
+			break;
+		case 4:
+			dia = "QUARTA";
+			break;
+		case 5:
+			dia = "QUINTA";
+			break;
+		case 6:
+			dia = "SEXTA";
+			break;
+		case 7 :
+			dia = "SABADO";
+			break;
+		default:
+				System.out.println("ENTRADA INVALIDA");
+				
+		
+		}
+		System.out.println(" DIA DA SEMANA É " + dia + "!!!!!");
+		
+		
+		sc.close();
+
+	}
+
+}
