@@ -1,0 +1,37 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("DIGITE A OPÇAO DESEJA: 1-ALCOOL 2-GASOLINA 3-DIESEL 4-FIM");
+		int cod = sc.nextInt();
+		int alcool = 0;
+		int gasolina = 0;
+		int diesel = 0;
+
+		while (cod != 4) {
+			if (cod == 1) {
+				alcool = alcool + 1;
+			} else if (cod == 2) {
+				gasolina = gasolina + 1;
+			} else if (cod == 3) {
+				diesel = diesel + 1;
+			}
+			System.out.println("DIGITE A OPÇAO DESEJA: 1-ALCOOL 2-GASOLINA 3-DIESEL 4-FIM");
+			cod = sc.nextInt();
+
+		}
+
+		System.out.println("MUITO OBRIGADO!!");
+		System.out.println("ALCOOL : " + alcool);
+		System.out.println("GASOLINA : " + gasolina);
+		System.out.println("DIESEL : " + diesel);
+
+		sc.close();
+
+	}
+}
