@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("QUANTOS NUMEROS INTEIROS VOCÊ VAI DIGITAR ?");
+		int num = sc.nextInt();
+		int soma = 0;
+
+		for (int i = 1; i <= num; i++) {
+
+			System.out.println("DIGITE O " + i + " NUMERO !");
+			int auxiliar = sc.nextInt();
+
+			soma = soma + auxiliar;
+		}
+
+		System.out.println("A SOMA É : " + soma);
+
+		sc.close();
+
+	}
+}
