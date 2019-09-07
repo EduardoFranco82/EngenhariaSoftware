@@ -1,0 +1,34 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println(" DIGITE QUANTAS X QUER QUE LEIA OS PARES PARA CALCULO");
+		int numero = sc.nextInt();
+		double divisao;
+
+		for (int i = 1; i <= numero; i++) {
+			System.out.println("DIGITE 2 NUMEROS INTEIROS PARA CALCULO DE DIVISAO PELA " + i + " VEZ ");
+			int num1 = sc.nextInt();
+			int num2 = sc.nextInt();
+
+			if (num2 != 0) {
+				divisao = num1 / num2;
+				System.out.println(divisao);
+
+			} else {
+				System.out.println("DIVISAO IMPOSSIVEL");
+			}
+
+		}
+
+		System.out.println(" FIM DO PROGRAMA");
+
+		sc.close();
+
+	}
+}
