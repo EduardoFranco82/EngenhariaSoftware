@@ -1,0 +1,30 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("DIGITE QUANTOS NUMEROS INTEIROS SERAO LIDOS");
+		int numero = sc.nextInt();
+		int in = 0;
+		int out = 0;
+
+		for (int i = 1; i <= numero; i++) {
+			System.out.println("DIGITE O " + i + "NUMERO !!");
+			int auxiliar = sc.nextInt();
+			if (auxiliar >= 10 && auxiliar <= 20) {
+				in = in + 1;
+			} else {
+				out = out + 1;
+			}
+		}
+		System.out.println(in + " IN");
+		System.out.println(out + " OUT");
+
+		sc.close();
+
+	}
+}
