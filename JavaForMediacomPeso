@@ -1,0 +1,25 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("DIGITE O NUMERO DE CASOS DE TESTE");
+		int numero = sc.nextInt();
+
+		for (int i = 1; i <= numero; i++) {
+			System.out.println(" DIGITE O " + i + " CASO DE TESTE COM 3 NUMEROS COM 1 CASA DECIMAL");
+			double num1 = sc.nextDouble();
+			double num2 = sc.nextDouble();
+			double num3 = sc.nextDouble();
+			double media = (num1 * 2 + num2 * 3 + num3 * 5) / 10;
+			System.out.printf("%.1f%n", media);
+		}
+
+		sc.close();
+
+	}
+}
