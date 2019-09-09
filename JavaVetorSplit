@@ -1,0 +1,25 @@
+package course2;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		
+		String palavra ="laranja limao uva morango";
+		String[] fazerVetor = palavra.split(" ");
+		
+		
+		System.out.println(fazerVetor[0]);
+		System.out.println(fazerVetor[1]);
+		System.out.println(fazerVetor[2]);
+		System.out.println(fazerVetor[3]);
+		
+		sc.close();
+
+	}
+}
