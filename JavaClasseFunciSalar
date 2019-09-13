@@ -1,0 +1,58 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Funcionario;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+
+		Scanner sc = new Scanner(System.in);
+		Funcionario funcionario = new Funcionario();
+		System.out.println(" DIGITE O NOME DO FUNCIONÁRIO, SALARIO BRUTO E TAXA EM CIMA DO SALARIO");
+
+		funcionario.nome = sc.nextLine();
+		funcionario.salario_bruto = sc.nextDouble();
+		funcionario.taxa = sc.nextDouble();
+
+		System.out.println(funcionario);
+
+		System.out.println(" QUAL TAXA VAI ACRESCENTAR AO SALARIO?");
+		double acrescimo = sc.nextDouble();
+		funcionario.acrescimo_salario(acrescimo);
+
+		System.out.println("ATUALIZADO" + funcionario);
+
+		sc.close();
+
+	}
+
+}
+//package entidade;
+
+public class Funcionario {
+
+	public String nome;
+	public Double salario_bruto;
+	public Double taxa;
+
+	public double salario_real() {
+		return salario_bruto - taxa;
+	}
+
+	public void acrescimo_salario(double porcentagem) {
+
+		salario_bruto += salario_bruto * porcentagem / 100;
+
+	}
+
+	public String toString() {
+
+		return nome + ", $ " + String.format("%.2f", salario_real());
+
+	}
+
+}
