@@ -1,0 +1,81 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Produto;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+
+		Scanner sc = new Scanner(System.in);
+		Produto produto = new Produto();
+
+		System.out.println("ENTRE COM OS DADOS DO PRODUTO");
+		System.out.print("NOME : ");
+
+		produto.nome = sc.nextLine();
+
+		System.out.print("DIGITE O PREÇO DO PRODUTO");
+		produto.preco = sc.nextDouble();
+
+		System.out.print(" DIGITE A QUANTIDADE EM ESTOQUE");
+		produto.quantidade = sc.nextInt();
+
+		System.out.println("data :" + produto);
+		System.out.println();
+
+		System.out.println("ENTRE COM O NUMERO DE PRODUTOS PARA SER ADICIONADO AO ESTOQUE");
+		int adicionar = sc.nextInt();
+
+		produto.adicionarProdutos(adicionar);
+
+		System.out.println(" ATUALIZADO : " + produto);
+		System.out.println();
+
+		System.out.println("ENTRE COM O NUMERO DE PRODUTOS PARA SER REMOVIDO DO ESTOQUE");
+		int remover = sc.nextInt();
+
+		produto.removerProduto(remover);
+
+		System.out.println(" ATUALIZADO :" + produto);
+		System.out.println();
+
+		sc.close();
+
+	}
+
+}
+/*package entidade;
+
+public class Produto {
+
+	public String nome;
+	public double preco;
+	public int quantidade;
+
+	public double valorTotalEmEstoque() {
+
+		return preco * quantidade;
+
+	}
+
+	public void adicionarProdutos(int quantidade) {
+
+		this.quantidade += quantidade;
+
+	}
+
+	public void removerProduto(int quantidade) {
+
+		this.quantidade -= quantidade;
+
+	}
+
+	public String toString() {
+		return nome + ", $ " + String.format("%.2f", preco) + " , " + quantidade + "unidades, Total: $"
+				+ String.format("%.2f", valorTotalEmEstoque());
+	}
+*/}
