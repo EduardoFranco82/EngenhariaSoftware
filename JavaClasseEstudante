@@ -1,0 +1,59 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Estudante;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+
+		Scanner sc = new Scanner(System.in);
+		Estudante estudante = new Estudante();
+		System.out.println(" DIGITE O NOME E AS 3 NOTAS DO ALUNO");
+
+		estudante.nome = sc.nextLine();
+		estudante.notaA = sc.nextDouble();
+		estudante.notaB = sc.nextDouble();
+		estudante.notaC = sc.nextDouble();
+
+		System.out.println(estudante.tostring());
+
+		sc.close();
+
+	}
+
+}/////////////////////////////////////////////////////////////////////////////
+package entidade;
+
+public class Estudante {
+
+	public String nome;
+	public Double notaA;
+	public Double notaB;
+	public Double notaC;
+
+	public double nota_final() {
+
+		return notaA + notaB + notaC;
+
+	}
+
+	public String avaliacao() {
+
+		if (nota_final() >= 60) {
+			return "APROVADO";
+		} else {
+			return "REPROVADO \nFALTANDO " + (60 - nota_final());
+		}
+
+	}
+
+	public String tostring() {
+
+		return "NOTA FINAL = " + nota_final() + "\n" + avaliacao();
+	}
+
+}
